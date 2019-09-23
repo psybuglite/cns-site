@@ -1,0 +1,80 @@
+---
+layout: default
+---
+
+
+<section class="main-wrap mx-auto top-heading">
+    <div class="wrapper">
+        {% include lists/breadcrumbs.html %}
+        <h2>{{ page.title }}</h2>
+    </div>
+</section>
+
+
+<section class="w-100">
+    <div class="wrapper main-wrap mx-auto">
+        {%- if page.bottom_left_content  -%}
+        <div class="grid is-multi-col mostly-2">
+            <div>
+                <h3 class="co-primary mt-0">{{ page.top_left_content.title }}</h3>
+                <p>
+                {{ page.top_left_content.body | markdownify }}
+                </p>
+            </div>
+            <div>
+                <h3 class="co-primary mt-0">{{ page.top_right_content.title }}</h3>
+                <p>
+                {{ page.top_right_content.body | markdownify }}
+                </p>
+            </div>
+            <div>
+                <h3 class="co-primary mt-0">{{ page.bottom_left_content.title }}</h3>
+                <p>
+                {{ page.bottom_left_content.body | markdownify }}
+                </p>
+            </div>
+            <div>
+                <h3 class="co-primary mt-0">{{ page.bottom_right_content.title }}</h3>
+                <p>
+                {{ page.bottom_right_content.body | markdownify }}
+                </p>
+            </div>
+        </div>
+        {%- else -%}
+        <div class="maxwidth-tb">
+            <p>
+                {{ page.left_content.body | markdownify }}
+            </p>
+
+        </div>
+        {%- endif -%}
+    </div>
+</section>
+
+
+
+<section class="w-100 clearfix bg-primary">
+    <div class="wrapper left-50">
+        <h2 class="co-white">Know more about us</h2>
+    </div>
+    <div class="right-50">
+        <div class="grid-2 is-multi-col mostly-s2">
+            {% assign pages = site.pages | where: 'show_on_about', 'true' %}
+            {% for page in pages %}
+                <a href="{{ page.url | prepend: site.url }}" class="d-blk pos-r co-white desired-height-1qtr scale">
+                    <img src="{{ page.headline.image }}" class="fit-cover" alt="">
+                    <div class="z-depth-2 bg-dark-cover pos-a w-100 h-100 top-0">
+                        <h3 class="microtext center-center m-0 tx-c w-100 co-white">{{ page.title }}</h3>
+                    </div>
+                </a>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+{% include components/clients.html %}
+
+
+{% include components/lets-chat.html %}

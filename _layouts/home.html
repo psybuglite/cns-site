@@ -1,0 +1,64 @@
+---
+layout: default
+---
+
+<section class="width-100-pc wrapper will-grow pos-r">
+    <div class="main-wrap mx-auto py-2">
+        <div class="">
+            <h2 class="pb-1 co-primary">Our Services</h2>
+            <p class="smalltext maxwidth-sm">
+                We specialize in providing high quality trained and experienced personnel for offshore engineering and integrity work as well as new construction and various subsea projects.
+            </p>
+            <div class="grid is-multi-col mostly-3 py-2">
+                {% assign pages = site.pages | where: 'show_on_services', 'true' %}
+                {% for page in pages %}
+                    <div class="rad-s brashshadow">
+                        <img src="{{ site.url }}{{ page.headline.image }}" alt="" class="desired-height-1qtr">
+                        <div class="bg-primary wrapper">
+                            <h3 class="mt-1 co-white mb-2">{{ page.headline.title }}</h3>
+                            <p class="microtext co-white">
+                                {{ page.summary }} 
+                            </p>
+                            <a href="{{ site.url }}{{ page.url }}" class="btn bg-white btn-small is-cta py-h my-1h">
+                                <span class="prefix is-even-wider">
+                                    Learn more
+                                </span>
+                                <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z" fill="#0B5AAA"/>
+                                </svg>                
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="width-100-pc wrapper will-grow bg-rich-black clearfix pos-r desired-height">
+    <div class="main-wrap mx-auto py-2 clearfix h-100 d-flx flex-dir-col j-c-c">
+        <div class="left-50 ">
+            <h2 class="pb-2 co-compcolor">Safety Assurance</h2>
+            <p class="smalltext co-white">
+                The health, safety and welfare of our people, contractors, and the general public remains a primary concern in all our endeavours. We understand the significance and value of our greatest assets - the people - and we do not compromise our safety standards in the pursuit of achieving our goals.
+            </p>
+            <a href="{{ site.url }}/contact" class="btn bg-white btn-small is-cta py-h my-1h">
+                <span class="prefix is-even-wider">
+                    Learn more
+                </span>
+                <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z" fill="#0B5AAA"/>
+                </svg>                
+            </a>
+        </div>
+    </div>
+    <div class="right-50 pos-a safety-pic show-mediumup">
+        <img src="{{site.url}}/uploads/safety-assurance.jpg" alt="">
+    </div>
+</section>
+
+
+{% include components/clients.html %}
+
+
+{% include components/lets-chat.html %}

@@ -1,0 +1,119 @@
+// 
+    // Header
+
+    // @package hdy
+    // @author  Kabolobari Benakole <i@kb.life>
+
+.logo
+    width:                  90px
+.left-logo
+    width:                  50px
+
+.top-logo
+    width:                  50px
+    @media #{ $mediumup }
+        width:              90px
+        margin:             0 auto
+
+.mobile-bar
+    position:               relative
+    z-index:                4
+    display:                flex
+    justify-content:        space-between
+    @media #{ $mediumup }
+        display:             block
+
+
+
+.bar1, .bar2, .bar3
+    background-color:           rgba(255,255,255,1)
+    width:                      30px
+    height:                     2px
+    margin:                     6px 0
+    transition:                 0.4s
+
+.nav-menu
+    cursor:                         pointer
+    position:                       relative
+    z-index:                        4
+
+.change .bar1
+    transform:                      rotate(-45deg) translate(-6px, 4px)
+    background-color:               rgba(255,255,255,1)
+.change .bar2
+    opacity:                        0
+.change .bar3
+    transform:                      rotate(45deg) translate(-6px, -7px)
+    background-color:               rgba(255,255,255,1)
+
+header
+    .main-nav
+        a
+            text-decoration:        none
+            color:                  white
+            transition:             color 0.32s ease
+            &:active, &:focus, &:hover
+                text-decoration:    none
+            svg
+                stroke:             white
+        a.is-active
+            border-bottom:          5px solid $compcolor
+            color:                  $compcolor
+        a:hover,
+            color:                  $compcolor
+            svg
+                stroke:             $compcolor
+    .sticky-nav
+        transition:                 opacity 0.32s ease
+        a
+            text-decoration:        none
+            color:                  $richblack
+            transition:             color 0.32s ease
+            &:active, &:focus, &:hover
+                text-decoration:    none
+        a.is-active
+            border-bottom:          5px solid $primarycolor
+            color:                  $primarycolor
+        a:hover,
+            color:                  $primarycolor
+
+.mobile-nav
+    background-color:                   $richblack
+    height:                             100%
+    position:                           fixed
+    top:                                0
+    z-index:                            -1
+    transition:                         0.5s
+    opacity:                            0
+    width:                              100%
+    ul
+        list-style:                     none
+        display:                        flex
+        flex-direction:                 column
+        margin:                         0
+        align-items:                    flex-start
+        justify-items:                  flex-start
+        opacity:                        0
+        transition:                     all 0.5s
+        li
+            opacity:                    0
+            transition:                 opacity 0.5s
+            width:                      100%
+            text-align:                 left
+
+        a
+            padding:                    1rem 0
+            margin:                     0.5rem 0
+            color:                      #fff
+        a.is-active
+            color:                      $compcolor
+            
+
+.open-nav.mobile-nav
+    transform:                          translateX(0)
+    opacity:                            1
+    z-index:                            3
+    ul
+        opacity:                        1
+        li
+            opacity:                    1

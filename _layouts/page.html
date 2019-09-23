@@ -1,0 +1,174 @@
+---
+layout: default
+---
+
+<section class="main-wrap mx-auto top-heading">
+    <div class="wrapper">
+        {% include lists/breadcrumbs.html %}
+        <h2>{{ page.title }}</h2>
+    </div>
+</section>
+
+<section class="width-100-pc pos-r">
+    {% if page.grid == true %}
+        {% if page.title == "Services" %}
+            <div class="main-wrap wrapper mx-auto">
+                <div class="grid is-multi-col mostly-3">
+                    {% assign pages = site.pages | where: 'show_on_services', 'true' %}
+                    {% for page in pages %}
+                        <div class="rad-s brashshadow">
+                            <img src="{{ site.url }}{{ page.headline.image }}" alt="" class="desired-height-1qtr">
+                            <div class="bg-primary wrapper">
+                                <h2 class="mt-1 co-white mb-2">{{ page.headline.title }}</h2>
+                                <p class="microtext co-white">
+                                    {{ page.summary }} 
+                                </p>
+                                <a href="{{ site.url }}{{ page.url }}" class="btn bg-white btn-small is-cta py-h my-1h">
+                                    <span class="prefix is-even-wider">
+                                        Learn more
+                                    </span>
+                                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z" fill="#0B5AAA"/>
+                                    </svg>                
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if page.title == "Sitemap" %}
+            <div class="grid wrapper is-multi-col py-1 mostly-4">
+                {% for item in site.mainnav %}
+                    {% if item.pages[0] %}
+                        <div>
+                            <h3 class="smalltext">{{ item.section }}</h3>
+                            <ul class="none">
+                                {% for entry in item.pages %}
+                                    <li class="my-1">
+                                        <a href="{{ entry.url | prepend: site.url }}">
+                                            {{ entry.page }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        {% if page.title == "Operations" %}
+        <div class="main-wrap wrapper mx-auto">
+            <div class="grid is-multi-col mostly-2">
+                <div>
+                    <p class="mediumtext">{{ page.equipments.body | markdownify }}</p>
+                    <p class="py-2">
+                        <a href="{{site.url}}/operations/projects/">
+                            View our comprehensive list of projects.
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="grid is-multi-col mostly-4">
+                {%- for equipment in page.equipment_images -%}
+                    <div>
+                        <div class="py-1">
+                            <img src="{{ equipment.image }}" alt="{{ equipment.name }}">
+                        </div>
+                        <h4 class="tx-c microtext m-0">{{ equipment.name }}</h4>
+                    </div>
+                {%- endfor -%}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if page.service == true %}
+            <div class="main-wrap wrapper mx-auto">
+            <div class="grid is-multi-col mostly-2">
+                    <div>
+                        <p>{{ page.left_content.body | markdownify }}</p>
+                    </div>
+                    <div>
+                        <h3 class="co-primary">{{ page.right_content.title }}</h3>
+                        <p>{{ page.right_content.body | markdownify }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        
+        {% if page.title == "" %}
+        <div class="main-wrap wrapper mx-auto">
+            <div class="uk-overflow-auto">
+                <table class="uk-table uk-table-striped uk-table-hover uk-table-small uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>YEAR</th>
+                            <th>CLIENT</th>
+                            <th>VESSEL</th>
+                            <th>PROJECT TYPE/LOCATION</th>
+                            <th>DESCRIPTION</th>
+                            <th>DURATION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%- for item in page.projects -%}
+                            <tr>
+                                <td>{{ item.year }}</td>
+                                <td><img src="{{ site.url }}{{ item.client }}" alt=""></td>
+                                <td>{{ item.vessel }}</td>
+                                <td>{{ item.location }}</td>
+                                <td>{{ item.description }}</td>
+                                <td>{{ item.duration }}</td>
+                            </tr>
+                        {%- endfor -%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if page.title == "Track Record" %}
+        <div class="main-wrap wrapper mx-auto">
+            <div class="uk-overflow-auto">
+                <table class="uk-table uk-table-striped uk-table-hover uk-table-small uk-table-divider">
+                    <thead>
+                        <tr>
+                            <th>YEAR</th>
+                            <th>CLIENT</th>
+                            <th>VESSEL</th>
+                            <th>PROJECT TYPE/LOCATION</th>
+                            <th>DESCRIPTION</th>
+                            <th>DURATION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%- for item in page.projects -%}
+                            <tr>
+                                <td>{{ item.year }}</td>
+                                <td><img src="{{ site.url }}{{ item.client }}" alt=""></td>
+                                <td>{{ item.vessel }}</td>
+                                <td>{{ item.location }}</td>
+                                <td>{{ item.description }}</td>
+                                <td>{{ item.duration }}</td>
+                            </tr>
+                        {%- endfor -%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+            
+    {% endif %}
+        
+    <div class="pb-1 main-wrap wrapper mx-auto">
+        {{ content }}
+    </div>
+</section>
+
+    
+{% include components/clients.html %}
+
+
+{% include components/lets-chat.html %}

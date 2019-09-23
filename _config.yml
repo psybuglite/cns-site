@@ -1,0 +1,162 @@
+# Site settings
+title: CNS-Marine Nigeria Limited
+shortname: CNS
+legal_tag: CNS
+description: Work with experienced reliability professionals to develop strategic plans with proven methods, enabling you to maximize production capacity.
+url: 'https://gentle-lamb.netlify.com'
+footer_description: Your success is our success. We are driven by a motivation to see you succeed, and we’d love to hear what you have in mind.
+# timezone: Africa/Lagos
+
+
+# Handling Reading
+charset: 'utf-8'
+pagination:
+  enabled: true
+  permalink: '/:num/'
+  title: ':title - :num'
+  paginate_path: ":num"
+
+
+# Main navigation
+mainnav:
+  - section: Home
+    url: /
+  - section: About Us
+    url: /about/
+    pages:
+      - page: Origins
+        url: /about/origins/
+      - page: Mission & Values
+        url: /about/mission-values/
+      - page: Safety Assurance
+        url: /about/safety-assurance/
+      - page: People
+        url: /about/people/
+  - section: Services
+    url: /services/
+    pages:
+      - page: Industrial Diving
+        url: /services/industrial-diving/
+      - page: Procurement
+        url: /services/procurement/
+      - page: Project Management
+        url: /services/project-management/
+  - section: Operations
+    url: /operations/
+  - section: Contact Us
+    url: /contact/
+
+
+# Social media
+social_media:
+  - title:  Social
+    subpages:
+      - name: Facebook 
+        link: https://web.facebook.com/cnsmarineng?_rdc=1&_rdr
+      - name: YouTube
+        link: https://www.youtube.com/channel/UCAqY2jPr-66N69N23YX-WSQ
+      - name: Linkedin
+        link: https://www.linkedin.com/company/cns-marine-nigeria-limited
+
+
+# Legal
+legal:
+  - title:  Legal
+    subpages:
+      - name: Terms of Use
+        url: /terms-of-use/
+      - name: Privacy Policy
+        url: /privacy-policy/
+      - name: Sitemap
+        url: /sitemap/
+
+
+# Headquarters
+office:
+  title:    Office
+  lag_phone:  +234 (0) 909 611 0000
+  ph_phone: +234 (0) 909 611 1000
+  address:  Plot 4 Block 16c, Abisogun Leigh St, Oniru Estate, Victoria Island, Lagos, Nigeria.
+  email:    'info@cnsmarine-nigeria.com'
+  contact_url:   /contact/
+
+offices:
+  - location:
+      title: Administrative Office
+      phone:  +234 (0) 909 611 0000
+      address:  Plot 4 Block 16c, Abisogun Leigh St, Oniru Estate, Victoria Island, Lagos, Nigeria.
+      email: info@cnsmarine-nigeria.com
+      map_link: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4714.883156767138!2d3.4501494405786093!3d6.428935074193912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12c3fd30848af2fb!2sCNS!5e0!3m2!1sen!2sng!4v1569063369262!5m2!1sen!2sng
+  - location:
+      title: Operations Base
+      phone:  +234 (0) 909 611 1000
+      address:  No. 3, Notore Chemicals (NAFCON) Road, Onne, Rivers State, Nigeria.
+      email: info@cnsmarine-nigeria.com
+
+
+# Build settings
+markdown: kramdown
+
+
+# Collections
+collections:
+  uploads:
+    title:  Uploads (Media & Files)
+    output: true
+  blog:
+    title: Blog
+    output: true
+ 
+
+# Defaults
+defaults:
+  - scope:
+      type: blog
+    values:
+      permalink: /:collection/:year/:month/:day/:title/
+      image:
+      is_blog: true
+      layout: blog
+
+
+# Include folders
+include:
+  - _pages
+
+
+# Plugins
+plugins:
+  - jekyll-paginate-v2
+
+
+
+############################################################
+# Site configuration for the Auto-Pages feature
+# The values here represent the defaults if nothing is set
+autopages:
+
+  # Site-wide kill switch, disable here and it doesn't run at all 
+  enabled: true
+
+  # Collection pages, omit to disable
+  collections:
+    layouts:
+      - 'blog-all.html'
+    enabled: true
+  
+
+# Handling Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+
+# Exclude from processing.
+exclude:
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .gitignore

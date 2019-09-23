@@ -1,0 +1,112 @@
+<footer class="site-footer bg-white">
+    <h2 class="sr">Give the footer a heading</h2>
+
+    <div class="footer-grid main-wrap mx-auto wrapper">
+        
+        <div class="definition-area def-area pt-1">
+            <img src="{{ site.url }}/uploads/logo.png" alt="" class="bottom-logo">
+            <p class="mb-0 mt-1 microtext maxwidth-xxs">
+                {{ site.footer_description }}
+            </p>
+        </div>
+
+        <div class="nav-area">
+            {% for item in site.mainnav %}
+            {% if item.pages[0] %}
+            <div class="footer-title">
+                <h3 class="smalltext">{{ item.section }}</h3>
+                <ul class="none">
+                    {% for entry in item.pages %}
+                    <li class="my-1">
+                        <a class="" href="{{ entry.url | prepend: site.url }}">
+                            {{ entry.page }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        <div class="office-area footer-title">
+            <h3 class="smalltext">
+                {{ site.office.title }}
+            </h3>
+            <p class="microtext">
+                <span>Address:</span>
+                <span>{{ site.office.address }}</span>
+            </p>
+            <p class="microtext">
+                <span>Lagos:</span>
+                <a class="" href="tel:{{ site.office.lag_phone }}">
+                    {{ site.office.lag_phone }}
+                </a>
+            </p>
+            <p class="microtext">
+                <span>Port Harcourt:</span>
+                <a class="" href="tel:{{ site.office.ph_phone }}">
+                    {{ site.office.ph_phone }}
+                </a>
+            </p>
+            <p class="microtext">
+                <span>Email:</span>
+                <span>
+                    <a href="mailto:{{ site.office.email }}">
+                        {{ site.office.email }}
+                    </a>
+                </span>
+            </p>
+            <div>
+                {% for item in site.social_media %}
+                <ul class="none d-flx al-i-c">
+                    {% for entry in item.subpages %}
+                    <li class="prefix is-even-wider">
+                        <a href="//{{ entry.name | downcase }}.com/{{ entry.link }}" class="d-ibl prefix is-wider" target="_blank">
+                            {% case entry.name %}
+                            {% when 'Facebook' %}
+                            {% include tools/icons.html icon="facebook" %}
+                            {% when 'Linkedin' %}
+                            {% include tools/icons.html icon="linkedin" %}
+                            {% when 'YouTube' %}
+                            {% include tools/icons.html icon="youtube" %}
+                            {% endcase %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="main-wrap mx-auto wrapper-x pb-1 bod-top">
+        <div class="d-flx j-c-sb al-i-c fw-w">
+            <div class="d-flx al-i-c pt-1">
+                <a href="{{ site.url }}/terms-of-use">Terms of Use</a>
+                <span class="suffix is-even-wider prefix">
+                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="4" cy="4" r="4" fill="#212121"/>
+                    </svg>
+                </span>
+                <a href="{{ site.url }}/privacy-policy">Privacy Policy</a>
+            </div>
+            <p class="nanotext pt-1">
+               <a href="{{ site.url }}/copyright" class="co-richblack nanotext">Copyright</a> &copy; <span class="year"></span>. CNS Marine Nigeria. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+
+    var now = new Date();
+    var options = {
+        year: 'numeric'
+    };
+
+    var date = now.toLocaleString('en-us', options);
+    var year = document.querySelector(".year");
+
+    year.innerHTML = date;
+
+</script>

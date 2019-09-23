@@ -1,0 +1,149 @@
+// 
+    // Decorations
+
+    // @package hdy
+    // @author  Kabolobari Benakole <i@kb.life>
+
+h2.top
+    position:               relative
+    padding-bottom:         2rem
+h2.top::before
+    content:                ""
+    width:                  40%
+    height:                 3px
+    position:               absolute
+    top:                    80%
+    left:                   0
+    background:             $primarycolor
+h2.top::after
+    content:                ""
+    width:                  10%
+    height:                 3px
+    position:               absolute
+    top:                    80%
+    left:                   40%
+    background:             #ddd
+
+.first-carousel
+    .carousel-cell
+        height:                 350px
+    @media #{$mediumup}
+        .carousel-cell
+            height:             450px
+.carousel-cell
+    width:                      100%
+    height:                     auto
+    counter-increment:          carousel-cell
+    img
+        height:                 100%
+        object-fit:             cover
+    .carousel-caption
+        font-size:              1rem
+
+.flickity-button
+    background:                     $primarycolor
+    opacity:                        0.7
+    border-radius:                  none
+.flickity-button-icon
+    fill:                           white
+.flickity-button:hover
+    opacity:                        1
+    background:                     $primarycolor
+.flickity-prev-next-button
+    width:                          30px
+    height:                         30px
+    border-radius:                  0px
+.flickity-prev-next-button.next
+    right:                          -15px
+.flickity-prev-next-button.previous
+    left:                          -15px
+.carousel-caption
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 100
+    color: #fff
+    text-align: left
+    padding-left: 10px
+    background-image: -ms-linear-gradient(top right, rgba(0,101,53,0) 0%, rgba(0,101,53,1) 100%)
+    background-image: -moz-linear-gradient(top right, rgba(0,101,53,0) 0%, rgba(0,101,53,1) 100%)
+    background-image: -o-linear-gradient(top right, rgba(0,101,53,0) 0%, rgba(0,101,53,1) 100%)
+    background-image: -webkit-gradient(linear, right top, left bottom, color-stop(0, rgba(0,101,53,0)), color-stop(100, rgba(0,101,53,1)))
+    background-image: -webkit-linear-gradient(top right, rgba(0,101,53,0) 0%, rgba(0,101,53,1) 100%)
+    background-image: linear-gradient(to bottom left, rgba(0,101,53,0) 0%, rgba(0,101,53,1) 100%)
+.stat
+    padding: 0.5rem 0
+    border-top: $borderline
+    @media #{ $mediumup }
+        padding: 2rem 0
+        border: none
+
+.boxshadow
+    box-shadow:             $subtleboxshadow
+.brashshadow
+    box-shadow:             $brashboxshadow
+
+
+.footer-title
+    h3
+        position:           relative
+        padding-bottom:      2rem
+        &::before
+            content:            ""
+            position:           absolute
+            top:                50px
+            left:               0px
+            width:              50%
+            height:             1px
+            background-color:   $primarycolor
+.w-bar
+    position:           relative
+    &::before
+        content:            ""
+        position:           absolute
+        top:                10px
+        left:               0px
+        width:              1px
+        height:             50px
+        background-color:   rgba(255,255,255,0.5)
+
+.header-content
+    top:                        0
+    width:                      100%
+    padding-top:                1rem
+
+.center-content
+    top:                        50%
+    transform:                  translateY(-50%)
+
+.mouse-scroll
+    bottom:                     30px
+
+.main-nav
+    bottom:                     0
+
+.bod-top-w
+    border-top:                 1px solid rgba(255,255,255,0.5)
+.bod-left-w
+    border-left:                1px solid rgba(255,255,255,0.5)
+
+.uk-table-hover tbody tr:hover, .uk-table-hover > tr:hover 
+    background:                 rgba(11, 90, 170, 0.1)
+
+table
+    img
+        height:                 30px
+        object-fit:             contain
+
+.top-0
+    top:                        0
+.center-center
+    position:                   absolute
+    top:                        50%
+    transform:                  translateY(-50%)
+
+.scale h3
+    transition:                 0.3s
+
+.scale:hover h3
+    transform:                  scale(1.05)

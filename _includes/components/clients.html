@@ -1,0 +1,14 @@
+<section class="wrapper-y will-grow width-100-pc bg-white">
+    <div class="main-wrap wrapper-x mx-auto">
+        <div class="client-img ">
+            <h2 class="pb-2 co-primary">Clients and Partners</h2>
+            <ul class="none d-flx al-i-c j-c-sa fw-w ">
+                {%- for item in page.client_logos -%}
+                   <li class="client-logo-item">
+                       <img src="{{site.url}}{{ item }}" alt="">
+                   </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+    </div>
+</section>
