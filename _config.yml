@@ -75,7 +75,7 @@ legal:
 office:
   title:    Office
   lag_phone:  +234 (0) 909 611 0000
-  ph_phone: +234 (0) 909 611 1000
+  ph_phone: +234 (0) 909 611 0001
   address:  Plot 4 Block 16c, Abisogun Leigh St, Oniru Estate, Victoria Island, Lagos, Nigeria.
   email:    'info@cnsmarine-nigeria.com'
   contact_url:   /contact/
@@ -89,7 +89,7 @@ offices:
       map_link: https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4714.883156767138!2d3.4501494405786093!3d6.428935074193912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12c3fd30848af2fb!2sCNS!5e0!3m2!1sen!2sng!4v1569063369262!5m2!1sen!2sng
   - location:
       title: Operations Base
-      phone:  +234 (0) 909 611 1000
+      phone:  +234 (0) 909 611 0001
       address:  No. 3, Notore Chemicals (NAFCON) Road, Onne, Rivers State, Nigeria.
       email: info@cnsmarine-nigeria.com
 
