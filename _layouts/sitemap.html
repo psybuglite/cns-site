@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<section class="main-wrap mx-auto top-heading">
+    <div class="wrapper">
+        {% include lists/breadcrumbs.html %}
+        <h2>{{ page.title }}</h2>
+    </div>
+</section>
+
+<section class="width-100-pc pos-r">
+    <div class="main-wrap mx-auto top-heading">
+        <div class="wrapper">
+            {% if page.grid == true %}
+                    {% if page.title == "Sitemap" %}
+                        <div class="grid wrapper is-multi-col py-1 mostly-4">
+                            <div>
+                                <h3 class="smalltext">Home</h3>
+                                <ul class="none">
+                                    <li class="my-1">
+                                        <a href="{{ site.url }}">
+                                            Home
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            {% for item in site.mainnav %}
+                                {% if item.pages[0] %}
+                                    <div>
+                                        <h3 class="smalltext">{{ item.section }}</h3>
+                                        <ul class="none">
+                                            <li class="my-1">
+                                                <a href="{{ item.url | prepend: site.url }}">
+                                                    {{ entry.page }}
+                                                </a>
+                                            </li>
+                                            {% for entry in item.pages %}
+                                                <li class="my-1">
+                                                    <a href="{{ entry.url | prepend: site.url }}">
+                                                        {{ entry.page }}
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            <div>
+                                <h3 class="smalltext">Operations</h3>
+                                <ul class="none">
+                                    <li class="my-1">
+                                        <a href="{{ site.url }}/operations">
+                                            Operations
+                                        </a>
+                                    </li>
+                                    <li class="my-1">
+                                        <a href="{{ site.url }}/operations/projects">
+                                            Projects
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="smalltext">Contact</h3>
+                                <ul class="none">
+                                    <li class="my-1">
+                                        <a href="{{ site.url }}/contact">
+                                            Contact Us
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    {% endif %}
+            {% endif %}
+            
+            <div class="pb-1 main-wrap wrapper mx-auto">
+                {{ content }}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include components/lets-chat.html %}

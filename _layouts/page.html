@@ -98,37 +98,6 @@ layout: default
             </div>
         {% endif %}
         
-        {% if page.title == "" %}
-        <div class="main-wrap wrapper mx-auto">
-            <div class="uk-overflow-auto">
-                <table class="uk-table uk-table-striped uk-table-hover uk-table-small uk-table-divider">
-                    <thead>
-                        <tr>
-                            <th>YEAR</th>
-                            <th>CLIENT</th>
-                            <th>VESSEL</th>
-                            <th>PROJECT TYPE/LOCATION</th>
-                            <th>DESCRIPTION</th>
-                            <th>DURATION</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {%- for item in page.projects -%}
-                            <tr>
-                                <td>{{ item.year }}</td>
-                                <td><img src="{{ site.url }}{{ item.client }}" alt=""></td>
-                                <td>{{ item.vessel }}</td>
-                                <td>{{ item.location }}</td>
-                                <td>{{ item.description }}</td>
-                                <td>{{ item.duration }}</td>
-                            </tr>
-                        {%- endfor -%}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        {% endif %}
-
         {% if page.title == "Track Record" %}
         <div class="main-wrap wrapper mx-auto">
             <div class="uk-overflow-auto">
@@ -167,8 +136,9 @@ layout: default
     </div>
 </section>
 
-    
-{% include components/clients.html %}
+{%- if page.client_logos -%}
+    {% include components/clients.html %}
+{%- endif -%}
 
 
 {% include components/lets-chat.html %}

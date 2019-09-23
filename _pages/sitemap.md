@@ -1,6 +1,10 @@
 ---
 title: Sitemap
 permalink: /sitemap/
-layout: page
+layout: sitemap
 grid: true
+description: CNS Marine Nigeria sitemap. Navigate to using useful links when you're lost.
+headline:
+  image: "/uploads/privacy-policy.jpg"
+  title: "Sitemap"
 ---
